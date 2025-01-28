@@ -1,14 +1,9 @@
-TESTE 3
+TESTE 8
 <div class="container">
-  <video
-    *ngIf="exibirCamera"
-    class="video"
-    [ngStyle]="{ 'transform': !frontCamera ? 'scaleX(-1)' : 'scaleX(1)' }"
-    #videoElement
-    playsinline
-    autoplay
-    muted
-  >
+  <video class="video" [ngStyle]="{ 'transform': !frontCamera ? 'scaleX(-1)' : 'scaleX(1)' }"
+    #videoElement playsinline autoplay muted>
   </video>
-  <button class="toggle-button" type="primary-small-biometria-reverse" (click)="inverterCamera()">INVERTER CAMERA</button>
+  <button class="toggle-button" type="primary-small-biometria-reverse" (click)="inverterCamera()" [disabled]="isLoading">
+    {{ isLoading ? 'Trocando...' : 'INVERTER CAMERA' }}
+  </button>
 </div>
