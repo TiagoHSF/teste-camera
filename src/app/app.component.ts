@@ -7,7 +7,7 @@ import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@an
 })
 export class AppComponent implements OnInit {
 
-  constructor(private changeDetectorRef: ChangeDetectorRef){}
+  constructor(private changeDetectorRef: ChangeDetectorRef) { }
 
   /**
    * Possível Correção - ADICIONAR UM NG IF NO VIDEO ENQUANTO INVERTE A CAMERA
@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
   videoElement!: ElementRef<HTMLVideoElement>
 
   frontCamera = true;
+  exibirCamera = false;
 
   title = 'teste-camera';
 
@@ -27,6 +28,7 @@ export class AppComponent implements OnInit {
   }
 
   iniciarCamera() {
+    this.exibirCamera = false;
     if (navigator.mediaDevices) {
       navigator.mediaDevices.getUserMedia({
         video: {
@@ -40,6 +42,7 @@ export class AppComponent implements OnInit {
           this.videoElement.nativeElement.srcObject = stream;
         })
     }
+    this.exibirCamera = true
   }
 
   async inverterCamera() {
