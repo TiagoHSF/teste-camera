@@ -1,6 +1,6 @@
-TESTE 8
+TESTE  9 - Transform para espelhamento de camera
 <div class="container">
-  <video class="video" [ngStyle]="{ 'transform': !frontCamera ? 'scaleX(-1)' : 'scaleX(1)' }"
+  <video class="video" [ngStyle]="{ 'transform': getVideoTransform() }"
     #videoElement playsinline autoplay muted>
   </video>
   <button class="toggle-button" type="primary-small-biometria-reverse" (click)="inverterCamera()" [disabled]="isLoading">

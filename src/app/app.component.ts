@@ -94,4 +94,13 @@ export class AppComponent implements OnInit {
     const devices = await navigator.mediaDevices.enumerateDevices();
     return devices.filter(device => device.kind === 'videoinput');
   }
+
+  getVideoTransform(): string {
+    // Se for a câmera frontal, não aplicamos scaleX(-1) porque a câmera já espelha a imagem
+    if (this.frontCamera) {
+      return 'scaleX(1)'; // Mantém a imagem como está (já espelhada pela câmera frontal)
+    } else {
+      return 'scaleX(-1)'; // Inverte a imagem para a câmera traseira, se necessário
+    }
+  }
 }
