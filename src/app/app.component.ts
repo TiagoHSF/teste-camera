@@ -100,7 +100,7 @@ export class AppComponent implements OnInit {
     if (this.frontCamera) {
       return 'scaleX(1)'; // Mantém a imagem como está (já espelhada pela câmera frontal)
     } else {
-      return 'scaleX(-1)'; // Inverte a imagem para a câmera traseira, se necessário
+      return 'scaleX(1)'; // Inverte a imagem para a câmera traseira, se necessário
     }
   }
 }
