@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   videoElement!: ElementRef<HTMLVideoElement>
 
   frontCamera = true;
-  isLoading = false; // Adicionado para feedback visual
+  isLoading = false; /// Adicionado para feedback visual
 
   title = 'teste-camera';
 
